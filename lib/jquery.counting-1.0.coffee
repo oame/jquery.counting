@@ -19,7 +19,7 @@ jQuery ->
     $oneDay = 1000 * 60 * 60 * 24
 
     $defaults =
-      format: "%d日%H時間%m分%s秒"
+      format: "%d日と%H時間%m分%s秒"
       countUntil: null
       outdated_message: "期日になりました。"
 
