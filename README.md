@@ -18,27 +18,33 @@ jquery.counting はシンプルなカウントダウンタイマーです。
 
 &lt;head&gt;タグ内に以下のHTMLタグとJavascriptのコードを挿入します。
 
-	<script type="text/javascript" src="/path/to/jquery.js"></script>
-	<script type="text/javascript" src="/path/to/jquery.counting-1.0.js"></script>
-	<script type="text/javascript">
-	$(function(){
-	  $(".countdown").counting();
-	});
-	</script>
+```html
+<script type="text/javascript" src="/path/to/jquery.js"></script>
+<script type="text/javascript" src="/path/to/jquery.counting-1.0.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(".countdown").counting();
+});
+</script>
+```
 
 次に、カウントダウンを設置したい場所に以下のように書きます。  
 ポイントは、jQueryセレクタで指定したクラスを持っていることと、タグの中身で期日を設定しているところです。
 
-	締め切りまであと...<span class="countdown">2013/01/14</span>
+```html
+締め切りまであと...<span class="countdown">2013/01/14</span>
+```
 
 これで一番シンプルなセットアップが完了しました！  
 ページを読み込むときっと以下のように表示されるでしょう。
-	
-	<!-- 期日前 -->
-	締め切りまであと...4日と11時間22分12秒
-	
-	<!-- 期日を過ぎた後 -->
-	締め切りまであと...期日になりました。
+
+```html
+<!-- 期日前 -->
+締め切りまであと...4日と11時間22分12秒
+
+<!-- 期日を過ぎた後 -->
+締め切りまであと...期日になりました。
+```
 
 おめでとうございます。たったこれだけでカウントダウンが出来ました！  
 他のサンプルは`example/`に入っています。良かったら見てみてください！
@@ -70,11 +76,15 @@ outdated_message|期日になりました。|カウントダウン用のタグ�
 
 例えば、期日を過ぎた後に表示させたいメッセージはデフォルトでは「期日になりました。」ですが、これを変更したい場合は`data-outdated`属性で指定してあげます。
 
-	締め切りまであと…<span class="countdown" data-outdated="締め切りは過ぎました！">2013/01/14</span>
+```html
+締め切りまであと…<span class="countdown" data-outdated="締め切りは過ぎました！">2013/01/14</span>
+```
 
 こうすることで、期日を過ぎた後に表示されるメッセージが変更されます
-	
-	締め切りまであと...締め切りは過ぎました！
+
+```html
+締め切りまであと...締め切りは過ぎました！
+```
 	
 以下に全ての使用可能なオプションを挙げておきます。
 
@@ -90,21 +100,25 @@ data-format     |%d日と%H時間%m分%s秒|カウントダウンのフォーマ
 
 期日を迎えた際に呼び出されます。
 
-	$(".countdown").counting({
-	  onOutdated: function(event){
-	    location.href = "/happy_birthday.html";
-	  }
-	});
+```javascript
+$(".countdown").counting({
+  onOutdated: function(event){
+    location.href = "/happy_birthday.html";
+  }
+});
+```
 
 ### onCount
 
 カウントが秒単位で変化した際に呼ばれます。カウントダウンと連動したカスタムアニメーションを定義したい場合に使うと良いでしょう。
 
-	$(".countdown").counting({
-	  onCount: function(event){
-	    // ここに良い感じのコードを書く
-	  }
-	});
+```javascript
+$(".countdown").counting({
+  onCount: function(event){
+    // ここに良い感じのコードを書く
+  }
+});
+```
 
 # 協力
 
