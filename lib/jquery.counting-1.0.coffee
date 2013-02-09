@@ -40,7 +40,7 @@ jQuery ->
       clearInterval($interval)
 
     timeLeft = ->
-      now = (new Date()).getTime()# - (new Date()).getTimezoneOffset() * $oneMinute
+      now = (new Date()).getTime() - (new Date()).getTimezoneOffset() * $oneMinute
       milliSecsLeft = $settings.countUntil - now
       if milliSecsLeft < 0
         return 0
